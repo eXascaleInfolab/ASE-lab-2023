@@ -6,7 +6,7 @@ ___
 
 - Ubuntu 18 or higher
 - Docker version 20.10 (or higher)
-- clone this repository
+- Clone this repository, you will need the data files. 
 ___
 ## InfluxDB Installation
 Use the following run to download and run the InfluxDB v2.0 Docker image. Expose port `8086`, which InfluxDB uses for client-server communication over the `InfluxDB HTTP API`.
