@@ -9,7 +9,7 @@ ___
 - Clone this repository, you will need the data files. 
 ___
 ## InfluxDB Installation
-Use the following run to download and run the InfluxDB v2.0 Docker image. Expose port `8086`, which InfluxDB uses for client-server communication over the `InfluxDB HTTP API`.
+Use the following command to download and run the InfluxDB v2.0 Docker image. Expose port `8086`, which is used by InfluxDB for client-server communication over the `InfluxDB HTTP API`.
 ```bash
 sudo docker run --name influxdb -p 8086:8086 influxdb:2.4.0
 ```
