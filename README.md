@@ -6,47 +6,31 @@ ___
 
 - Ubuntu 18 or higher
 - Docker version 20.10 (or higher)
-
+- clone this repository
 ___
 ## InfluxDB Installation
-Downloading and installing InfluxDB
+Use the following run to download and run the InfluxDB v2.0 Docker image. Expose port `8086`, which InfluxDB uses for client-server communication over the `InfluxDB HTTP API`.
 ```bash
-sudo docker pull influxdb:1.8
-sudo docker run -p 8086:8086 influxdb:1.8 
+sudo docker run --name influxdb -p 8086:8086 influxdb:2.4.0
 ```
-
-Grafana Installation
+Or if it is already installed: 
 ```bash
-docker run -d --name=grafana -p 3000:3000 grafana/grafana-oss:9.2.3-ubuntu
+sudo docker start influxdb
 ```
-
-Plugin installation options could be found in https://grafana.com/docs/grafana/v9.0/setup-grafana/installation/docker/
-
-Default username and passwords are 'admin'
-
-Launch InfluxDB
+Or if it is already installed: 
 ```bash
-influx
-```
-
-Test Connectivity: 
-```bash
-show databases
-create database mydatabase
-show databases
+sudo docker start influxdb
 ```
 
 ___
-## Data Loading
+## Telegraf Installation
+In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
+```bash
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo tee /etc/apt/trusted.gpg.d/influxdb.asc >/dev/null
+source /etc/os-release
+echo "deb https://repos.influxdata.com/${ID} ${VERSION_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt-get update && sudo apt-get install telegraf
+```
 
-
-
-___
-## Running Queries
-
-
-
-___
-## Retention Policies
 
 
