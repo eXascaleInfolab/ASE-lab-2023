@@ -4,7 +4,7 @@
 ___
 ## Prerequisites and dependencies
 
-- Ubuntu 18 or higher. For a different OS, please refer to the [InfluxDB installation portal](https://portal.influxdata.com/downloads) and install InfluxDB version 2.4. 
+- Ubuntu 18 or higher (For a different OS, please refer to the [InfluxDB installation portal](https://portal.influxdata.com/downloads) and install InfluxDB version 2.4). 
 - Docker version 20.10 (or higher)
 - Clone this repository, you will need the data files. 
 ___
