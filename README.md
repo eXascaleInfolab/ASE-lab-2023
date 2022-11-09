@@ -1,4 +1,4 @@
-# Time Series Database System Laboratory (2022)
+# ASE 2022: TSDB Lab
 
 
 ___
