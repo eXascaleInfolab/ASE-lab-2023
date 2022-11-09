@@ -17,10 +17,6 @@ Or if it is already installed:
 ```bash
 sudo docker start influxdb
 ```
-Or if it is already installed: 
-```bash
-sudo docker start influxdb
-```
 
 ___
 ## Telegraf Installation
