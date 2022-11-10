@@ -37,7 +37,7 @@ Or if it is already installed:
 sudo docker start influxdb
 ```
 
-Then install Influx CLI:
+Then install Influx CLI (or [here](https://docs.influxdata.com/influxdb/v2.4/tools/influx-cli/)) for other OSs):
 ```bash
 wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz
 tar xvzf influxdb2-client-2.4.0-linux-amd64.tar.gz
