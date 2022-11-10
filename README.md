@@ -53,6 +53,7 @@ influx config create -n default \
   -t INFLUX_API_TOKEN \
   -a
 ```
+
 ___
 ## Telegraf Installation
 In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
@@ -63,5 +64,9 @@ echo "deb https://repos.influxdata.com/${ID} ${VERSION_CODENAME} stable" | sudo 
 sudo apt-get update && sudo apt-get install telegraf -y
 ```
 
+___
+## Dashboard templates: 
+
+InfluxDB Community Templates could be found [here](https://github.com/influxdata/community-templates). 
 
 
