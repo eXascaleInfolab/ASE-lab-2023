@@ -37,6 +37,22 @@ Or if it is already installed:
 sudo docker start influxdb
 ```
 
+Then install Influx CLI:
+```bash
+wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz
+tar xvzf influxdb2-client-2.4.0-linux-amd64.tar.gz
+sudo cp influxdb2-client-2.4.0-linux-amd64/influx /usr/local/bin/
+```
+To avoid having to pass your InfluxDB API token with each influx command, set up a configuration profile to store your credentials–for example, enter the following code in your terminal:
+
+```bash
+# Set up a configuration profile
+influx config create -n default \
+  -u http://localhost:8086 \
+  -o INFLUX_ORG \
+  -t INFLUX_API_TOKEN \
+  -a
+```
 ___
 ## Telegraf Installation
 In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
