@@ -30,7 +30,7 @@ ___
 ## InfluxDB Installation
 Use the following command to download and run the InfluxDB v2.0 Docker image. Expose port `8086`, which is used by InfluxDB for client-server communication over the `InfluxDB HTTP API`.
 ```bash
-sudo docker run --name influxdb -p 8086:8086 influxdb:2.4.0
+sudo docker run --name influxdb -p 8086:8086 influxdb:2.7.1
 ```
 Or if it is already installed: 
 ```bash
