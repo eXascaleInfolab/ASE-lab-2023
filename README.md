@@ -4,7 +4,7 @@
 ___
 ## Prerequisites and dependencies
 
-- Ubuntu 18 or higher (For a different OS, please refer to the [InfluxDB installation portal](https://portal.influxdata.com/downloads) and install InfluxDB version 2.4). 
+- Ubuntu 18 or higher (For a different OS, please refer to the [InfluxDB installation portal](https://portal.influxdata.com/downloads) and install InfluxDB version 2.7.1). 
 - Docker version 20.10 (or higher)
 - Clone this repository, you will need the data files. 
 
@@ -37,11 +37,13 @@ Or if it is already installed:
 sudo docker start influxdb
 ```
 
-Then install Influx CLI (or [here](https://docs.influxdata.com/influxdb/v2.4/tools/influx-cli/)) for other OSs):
+Then install Influx CLI (or [here](https://portal.influxdata.com/downloads/)) for other OSs):
 ```bash
-wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.4.0-linux-amd64.tar.gz
-tar xvzf influxdb2-client-2.4.0-linux-amd64.tar.gz
-sudo cp influxdb2-client-2.4.0-linux-amd64/influx /usr/local/bin/
+wget -q https://repos.influxdata.com/influxdata-archive_compat.key
+echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
+
+sudo apt-get update && sudo apt-get install influxdb2-cli
 ```
 To avoid having to pass your InfluxDB API token with each influx command, set up a configuration profile to store your credentials–for example, enter the following code in your terminal:
 
