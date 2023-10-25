@@ -56,6 +56,12 @@ influx config create -n default \
   -a
 ```
 
+Then launch InfluxDB: 
+```bash
+# Set up a configuration profile
+influx v1 shell
+```
+
 ___
 ## Telegraf Installation
 In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
