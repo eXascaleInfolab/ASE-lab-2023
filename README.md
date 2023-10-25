@@ -74,6 +74,14 @@ sudo apt-get update && sudo apt-get install telegraf
 ```
 
 ___
+## Data Querying
+
+Examples of data queries in Flux could be found in the following page: 
+
+```bash
+https://docs.influxdata.com/influxdb/cloud/query-data/flux/
+```
+___
 ## Dashboard templates: 
 
 InfluxDB Community Templates could be found [here](https://github.com/influxdata/community-templates). 
