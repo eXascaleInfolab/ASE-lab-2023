@@ -39,8 +39,8 @@ sudo docker start influxdb
 You should now be able to access the web interface by opening your web browser and navigating to [http://localhost:8086/](http://localhost:8086/). 
 - Create an account and organization, set up your first bucket, and save the provided API token.
 - Download this repository to acces the datasets. 
-- Upload the dataset bitcoin-historical-annotated.csv into your bucket under sources and select "upload a CSV".
-- Inspect the data with the Data Explorer by selecting your bucket and the measurement 'coindesk', to see the data you need to select custom time range starting from 2022-10-11 11:00:00.
+- Upload the dataset bitcoin-historical-annotated.csv into your bucket under sources (second option on the left) and select "upload a CSV".
+- Inspect the data with the Data Explorer (third option on the left) by selecting your bucket and the measurement 'coindesk', to see the data you need to select custom time range starting from 2022-10-11 11:00:00.
 
 ___
 ## Telegraf Installation
