@@ -36,11 +36,30 @@ Or if it is already installed:
 ```bash
 sudo docker start influxdb
 ```
+You should now be able to access the web interface by opening your web browser and navigating to [http://localhost:8086/](http://localhost:8086/). 
+- Create an account and organization, set up your first bucket, and save the provided API token.
+- Download this repository to acces the datasets. 
+- Upload the dataset bitcoin-historical-annotated.csv into your bucket under sources and select "upload a CSV".
+- Inspect the data with the Data Explorer by selecting your bucket and the measurement 'coindesk', to see the data you need to select custom time range starting from 2022-10-11 11:00:00.
 
-You should now be able to access the web interface by opening your web browser and navigating to [http://localhost:8086/](http://localhost:8086/). There you can create an account and an organisation.
+___
+## Telegraf Installation
+In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
+```bash
+wget -q https://repos.influxdata.com/influxdata-archive_compat.key
+echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
 
+sudo apt-get update && sudo apt-get install telegraf
+```
+Check your installation 
 
-Then install Influx CLI (for other OS follow this [link](https://portal.influxdata.com/downloads/)):
+```bash
+telegraf version
+```
+
+## CLI Setup
+Install Influx CLI (for other OS follow this [link](https://portal.influxdata.com/downloads/)):
 ```bash
 wget -q https://repos.influxdata.com/influxdata-archive_compat.key
 echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
@@ -59,21 +78,12 @@ influx config create -n default \
   -a
 ```
 
-Then launch InfluxDB: 
+Test the shell: 
 ```bash
-# Set up a configuration profile
 influx v1 shell
-```
-
-___
-## Telegraf Installation
-In a new terminal, Install Telegraf from the InfluxData repository with the following commands:
-```bash
-wget -q https://repos.influxdata.com/influxdata-archive_compat.key
-echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
-echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
-
-sudo apt-get update && sudo apt-get install telegraf
+> use "your_bucket"
+>
+> select * from "coindesk";
 ```
 
 ___
