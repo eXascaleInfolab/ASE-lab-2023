@@ -37,6 +37,9 @@ Or if it is already installed:
 sudo docker start influxdb
 ```
 
+You should now be able to access the web interface by opening your web browser and navigating to [http://localhost:8086/](http://localhost:8086/).
+
+
 Then install Influx CLI (or [here](https://portal.influxdata.com/downloads/)) for other OSs):
 ```bash
 wget -q https://repos.influxdata.com/influxdata-archive_compat.key
